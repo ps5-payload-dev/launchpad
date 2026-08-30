@@ -23,7 +23,7 @@ else
     $(error PS5_PAYLOAD_SDK is undefined)
 endif
 
-ELF := elfldr-fe-install.elf
+ELF := launchpad-install.elf
 
 CFLAGS := -Wall -Werror -g -DTITLE_ID="\"BREW10006\""
 LDADD  := -lSceIpmi -lSceAppInstUtil

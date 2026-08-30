@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Payload
-        path: elfldr-fe-install.elf
+        path: launchpad-install.elf
         if-no-files-found: error
 
 
@@ -64,4 +64,4 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           prerelease: true
-          files: elfldr-fe-install.elf
+          files: launchpad-install.elf
