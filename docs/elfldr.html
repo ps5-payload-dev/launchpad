@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Payload Launchpad</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="elfldr.css">
+    <script src="input.js"></script>
+    <script src="elfldr.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.0.0/css/xterm.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.0.0/lib/xterm.min.js"></script>
+  </head>
+
+  <body onload="init();">
+    <header id="app-header">
+      <img src="icon0.png" alt="" />
+      <h1>Payload Launchpad</h1>
+    </header>
+
+    <div id="catalogue"></div>
+
+    <div id="details" hidden>
+      <h1 id="details-name"></h1>
+      <p id="details-desc"></p>
+
+      <label>Source code</label>
+      <p id="details-src"></p>
+
+      <label>Contributors</label>
+      <p id="details-contrib"></p>
+
+      <div id="details-term">
+	<label>Standard output</label>
+	<div id="details-stdout"></div>
+      </div>
+    </div>
+
+    <dialog id="pick-dialog">
+      <h1 id="pick-title"></h1>
+      <div id="pick-list"></div>
+    </dialog>
+
+    <div id="toast-list"></div>
+
+    <img id="mixed-content-workaround" hidden />
+  </body>
+</html>

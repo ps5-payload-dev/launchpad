@@ -1,0 +1,68 @@
+[
+    {
+	"displayname": "ftpsrv.elf",
+	"description": "An FTP server running on port 2121",
+	"sourcecode": "https://github.com/ps5-payload-dev/ftpsrv",
+	"contributors": ["john-tornblom", "EchoStretch", "Gezine", "rootlis", "Al-Azif", "Storm21CH"],
+	"args": "-p 2121",
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/ftpsrv/releases/latest/download/ftpsrv-ps5.elf"
+	}
+    },
+    {
+	"displayname": "websrv.elf",
+	"description": "A web server running on port 8080",
+	"sourcecode": "https://github.com/ps5-payload-dev/websrv",
+	"contributors": ["john-tornblom", "idlesauce", "sunnyqeen", "GiantPluto", "gb160", "eltociear", "alex-free", "ProsperoPotato"],
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/websrv/releases/latest/download/websrv-ps5.elf"
+	}
+    },
+    {
+	"displayname": "klogsrv.elf",
+	"description": "A TCP server that redirects /dev/klog to sockets connected to port 3232",
+	"sourcecode": "https://github.com/ps5-payload-dev/klogsrv",
+	"contributors": ["john-tornblom", "Al-Azif"],
+	"args": "-p 3232",
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/klogsrv/releases/latest/download/klogsrv-ps5.elf"
+	}
+    },
+    {
+	"displayname": "kstuff-lite",
+	"description": "A kernel patcher that enables fake-signed ELFs and PKGs",
+	"sourcecode": "https://github.com/EchoStretch/kstuff-lite",
+	"contributors": ["EchoStretch", "drakmor", "sunnyqeen", "ItsAllAboutTheCode", "tarek369", "idlesauce"],
+	"releases": {
+	    "latest": "https://github.com/EchoStretch/kstuff-lite/releases/latest/download/kstuff.elf"
+	}
+    },
+    {
+	"displayname": "shsrv.elf",
+	"description": "A telnet-like shell server running on port 2323",
+	"sourcecode": "https://github.com/ps5-payload-dev/shsrv",
+	"contributors": ["john-tornblom", "rrooij", "ufm42"],
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/shsrv/releases/latest/download/shsrv-ps5.elf"
+	}
+    },
+    {
+	"displayname": "gdbsrv.elf",
+	"description": "A server for the GNU debugger running on port 2159",
+	"sourcecode": "https://github.com/ps5-payload-dev/gdbsrv",
+	"contributors": ["john-tornblom", "rrooij", "ufm42"],
+	"args": "-p 2159",
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/gdbsrv/releases/latest/download/gdbsrv-ps5.elf"
+	}
+    },
+    {
+	"displayname": "elfldr.elf",
+	"description": "Restart the ELF payload loader with a specific version",
+	"sourcecode": "https://github.com/ps5-payload-dev/elfldr",
+	"contributors": ["john-tornblom"],
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/elfldr/releases/latest/download/elfldr-ps5.elf"
+	}
+    }
+]

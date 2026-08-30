@@ -1,0 +1,11 @@
+{
+    "applicationCategoryType": 66048,
+    "titleId": "BREW10006",
+    "localizedParameters": {
+	"defaultLanguage": "en-US",
+	"en-US": {
+	    "titleName": "Payload Launchpad"
+	}
+    },
+    "webAppUri": "https://ps5-payload-dev.github.io/launchpad"
+}
