@@ -97,11 +97,21 @@ body {
 /* ---------- details ---------- */
 
 #details {
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   padding: 2rem 2.25rem;
   background: var(--panel);
   border: 1px solid var(--edge);
   border-radius: 12px;
+}
+
+/*
+ * The display:flex above outranks the UA stylesheet's [hidden] {display:none},
+ * so without this the pane would be on screen before a card is picked.
+ */
+#details[hidden] {
+  display: none;
 }
 
 #details-name {
@@ -160,6 +170,31 @@ body {
   border-radius: 50%;
   background: var(--edge);
   object-fit: cover;
+}
+
+/*
+ * The terminal is the last row of the details pane and swallows whatever is
+ * left over, so it ends at the bottom of the panel however short the
+ * description above it is. FitAddon measures the *parent* of the .xterm
+ * element, which makes #details-stdout the one that has to carry the height;
+ * min-height:0 stops the default min-content floor from propping it open.
+ * The min-height on the wrapper is a floor for very short windows -- past
+ * that point #details scrolls rather than crushing the terminal.
+ */
+#details-term {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 12rem;
+}
+
+#details-stdout {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+#details-stdout .xterm {
+  height: 100%;
 }
 
 #pick-dialog {

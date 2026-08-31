@@ -2,6 +2,7 @@
 const ELFLDR_URL = "http://localhost:9021";
 const BLANK_IMAGE = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 let TERMINAL = undefined;
+let FIT_ADDON = undefined;
 let CONTRIBUTORS_OF = undefined;
 
 // The catalogue is the only thing the D-pad browses; the picker takes over
@@ -77,6 +78,20 @@ function renderDescription(payload) {
     if(TERMINAL) {
 	TERMINAL.clear();
 	TERMINAL.write(payload.stdout);
+    }
+}
+
+
+function fitTerminal() {
+    const stdout = document.getElementById("details-stdout");
+
+    if(!TERMINAL || !FIT_ADDON || !stdout.clientHeight || !stdout.clientWidth) {
+	return;
+    }
+
+    try {
+	FIT_ADDON.fit();
+    } catch(err) {
     }
 }
 
@@ -320,10 +335,12 @@ async function init() {
 	convertEol: true,
 	altClickMovesCursor: false,
 	disableStdin: true,
-	fontSize: 16,
-	cols: 90,
-	rows: 12
+	fontSize: 16
     });
 
+    FIT_ADDON = new FitAddon.FitAddon();
+    TERMINAL.loadAddon(FIT_ADDON);
     TERMINAL.open(stdout);
+
+    new ResizeObserver(fitTerminal).observe(stdout);
 }
