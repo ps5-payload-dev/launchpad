@@ -101,5 +101,16 @@
 	"releases": {
 	    "latest": "https://github.com/ps5-payload-dev/plutotv/releases/latest/download/plutotv-install.elf"
 	}
+    },
+    {
+	"displayname": "Linux Loader",
+	"description": "Linux payload implementing HV exploits to run a custom bootloader",
+	"category": "other",
+	"sourcecode": "https://github.com/ps5-linux/ps5-linux-loader",
+	"contributors": ["TheOfficialFloW"],
+	"releases": {
+	    "latest": "https://github.com/ps5-linux/ps5-linux-loader/releases/latest/download/ps5-linux-loader.elf"
+	}
     }
+
 ]
