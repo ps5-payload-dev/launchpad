@@ -145,6 +145,17 @@ var Input = (function () {
 	return el;
     }
 
+    // Take the ring off whatever holds it, leaving nothing under the cursor.
+    // Callers that empty out the surface being browsed need this, otherwise
+    // current() keeps handing back an element that is no longer on screen.
+    function blur() {
+	var el = document.querySelector(".focusable.focused");
+	if (el) {
+	    el.className = el.className.replace(/\s*\bfocused\b/, "");
+	}
+	return el;
+    }
+
     function focusFirst(scope) {
 	return focus(all(scope)[0], scope);
     }
@@ -234,6 +245,7 @@ var Input = (function () {
 	all: all,
 	current: current,
 	focus: focus,
+	blur: blur,
 	focusFirst: focusFirst,
 	focusIndex: focusIndex,
 	indexOfFocused: indexOfFocused,

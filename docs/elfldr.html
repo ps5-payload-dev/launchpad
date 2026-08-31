@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <title>Payload Launchpad</title>
-    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="elfldr.css">
     <script src="input.js"></script>
     <script src="dialog.js"></script>
@@ -15,11 +14,12 @@
 
   <body onload="init();">
     <header id="app-header">
-      <img src="icon0.png" alt="" />
-      <h1>Payload Launchpad</h1>
+      <nav id="category-tabs" role="tablist" aria-label="Categories"></nav>
     </header>
 
-    <div id="catalogue"></div>
+    <div id="catalogue">
+      <p id="catalogue-empty" hidden>No payloads in this category yet.</p>
+    </div>
 
     <div id="details" hidden>
       <h1 id="details-name"></h1>
