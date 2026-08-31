@@ -211,6 +211,47 @@ body {
   background: rgba(4, 6, 12, .65);
 }
 
+/*
+ * Belt and braces for the load-time flash: the UA sheet already does this for
+ * a real <dialog>, and it costs nothing to state it for the builds where the
+ * element is unknown and dialog.js has not run yet.
+ */
+#pick-dialog:not([open]) {
+  display: none;
+}
+
+/*
+ * Fallback modal for WebKit without <dialog> (see dialog.js). None of the UA
+ * modal styling exists there, so the centring, the stacking and the backdrop
+ * all have to be spelled out. width is restated because the base rule uses
+ * CSS min(), which those builds may also be missing.
+ */
+.no-dialog #pick-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 10000;
+}
+
+.no-dialog #pick-dialog[open] {
+  display: block;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(4, 6, 12, .65);
+  z-index: 9999;
+}
+
 #pick-title {
   margin: 0 0 .25rem;
   font-weight: 650;

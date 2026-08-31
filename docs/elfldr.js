@@ -187,7 +187,9 @@ function renderPickDialog(payload) {
     PICK_RETURN = Input.current(document.getElementById("catalogue"));
 
     title.textContent = payload.displayname;
-    list.replaceChildren();
+    while(list.firstChild) {
+	list.removeChild(list.firstChild);
+    }
 
     for(const tag of Object.keys(payload.releases)) {
 	const item = document.createElement("button");
@@ -307,6 +309,8 @@ function initInput() {
 
 async function init() {
     const dialog = document.getElementById("pick-dialog");
+    Dialog.polyfill(dialog);
+
     dialog.addEventListener('click', function(e) {
 	if(e.target === dialog) {
 	    dialog.close();
@@ -342,5 +346,10 @@ async function init() {
     TERMINAL.loadAddon(FIT_ADDON);
     TERMINAL.open(stdout);
 
-    new ResizeObserver(fitTerminal).observe(stdout);
+    if(typeof ResizeObserver === "function") {
+	new ResizeObserver(fitTerminal).observe(stdout);
+    } else {
+	window.addEventListener("resize", fitTerminal);
+	fitTerminal();
+    }
 }
