@@ -21,7 +21,7 @@ import urllib.request
 
 
 GITHUB_API = 'https://api.github.com'
-USER_AGENT = 'elfldr-payload-launcher-update-payloads/1.0'
+USER_AGENT = 'launchpad/1.0'
 
 
 class Error(Exception):
