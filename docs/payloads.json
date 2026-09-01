@@ -103,6 +103,16 @@
 	}
     },
     {
+	"displayname": "Payload launchpad",
+	"description": "Access this webapp from the official Sony dashboard",
+	"category": "installer",
+	"sourcecode": "https://github.com/ps5-payload-dev/launchpad",
+	"contributors": ["john-tornblom"],
+	"releases": {
+	    "latest": "https://github.com/ps5-payload-dev/launchpad/releases/latest/download/launchpad-install.elf"
+	}
+    },
+    {
 	"displayname": "Linux Loader",
 	"description": "Linux payload implementing HV exploits to run a custom bootloader",
 	"category": "other",
